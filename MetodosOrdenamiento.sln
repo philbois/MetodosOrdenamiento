@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetodosOrdenamiento", "MetodosOrdenamiento.csproj", "{FF4156AF-9B94-4EF9-A897-8370E135A1EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF4156AF-9B94-4EF9-A897-8370E135A1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4156AF-9B94-4EF9-A897-8370E135A1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4156AF-9B94-4EF9-A897-8370E135A1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4156AF-9B94-4EF9-A897-8370E135A1EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {362A165C-8238-4E0B-8434-64D2CEF1792F}
+	EndGlobalSection
+EndGlobal
