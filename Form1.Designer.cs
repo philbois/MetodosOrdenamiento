@@ -96,7 +96,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 26);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Generar Vector";
+            this.button1.Text = "Generar Vector Aleatorio";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -188,9 +188,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 16);
+            this.label2.Size = new System.Drawing.Size(103, 16);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Vector Generado";
+            this.label2.Text = "Vector Aleatorio";
             // 
             // label3
             // 
@@ -214,7 +214,7 @@
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 16;
-            this.listBox4.Location = new System.Drawing.Point(10, 494);
+            this.listBox4.Location = new System.Drawing.Point(10, 467);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(153, 276);
             this.listBox4.TabIndex = 12;
@@ -223,7 +223,7 @@
             // 
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 16;
-            this.listBox5.Location = new System.Drawing.Point(209, 494);
+            this.listBox5.Location = new System.Drawing.Point(209, 467);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(161, 276);
             this.listBox5.TabIndex = 13;
