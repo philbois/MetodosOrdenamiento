@@ -27,13 +27,10 @@ namespace MetodosOrdenamiento
             listBox1.Items.Clear();
             tiempo.Start();
             int p = int.Parse(textBox1.Text);
-            generador.crear(50000);
+            generador.crear(p);
 
             tiempo.Stop();
-            foreach (int i in generador.elVector())
-            {
-                listBox1.Items.Add(i.ToString());
-            }
+            
             listBox3.Items.Add(string.Format("Tiempo generando el vector: {0}", tiempo.Elapsed.TotalSeconds));
         }
 

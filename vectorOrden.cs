@@ -49,7 +49,7 @@ namespace MetodosOrdenamiento
                 }
             }
         }
-      /*  public void insertion()
+        public void insertion()
         {
 
             for (int i = 0; i < vector.Length - 1; i++)
@@ -132,6 +132,6 @@ namespace MetodosOrdenamiento
             }
             return result;
 
-        }*/
+        }
     }
 }
