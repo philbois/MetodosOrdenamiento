@@ -27,10 +27,13 @@ namespace MetodosOrdenamiento
             listBox1.Items.Clear();
             tiempo.Start();
             int p = int.Parse(textBox1.Text);
-            generador.crear(p);
+            generador.crear(50000);
 
             tiempo.Stop();
-            
+            foreach (int i in generador.elVector())
+            {
+                listBox1.Items.Add(i.ToString());
+            }
             listBox3.Items.Add(string.Format("Tiempo generando el vector: {0}", tiempo.Elapsed.TotalSeconds));
         }
 
@@ -61,7 +64,7 @@ namespace MetodosOrdenamiento
 
 
             }
-           /* else if (radioButton2.Checked) //insercion ((muy parecido a burbuja)
+            else if (radioButton2.Checked) //insercion ((muy parecido a burbuja)
             {
                 dt1 = DateTime.Now;
                 generador.insertion();
@@ -72,12 +75,12 @@ namespace MetodosOrdenamiento
                 generador.MergeSort();
             }
             dt2 = DateTime.Now;
-            dt3 = dt2 - dt1;*/
+            dt3 = dt2 - dt1;
             foreach (int i in generador.elVector())
             {
                 listBox2.Items.Add(i.ToString());
             }
-            //listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds));
+            listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds));
         }
     }
 }
