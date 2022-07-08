@@ -25,15 +25,24 @@ namespace MetodosOrdenamiento
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            listBox4.Items.Clear();
             tiempo.Start();
             int p = int.Parse(textBox1.Text);
-            generador.crear(50000);
+            generador.crear(p);
 
             tiempo.Stop();
-            foreach (int i in generador.elVector())
+            if (checkBox1.Checked || p<50000)
             {
-                listBox1.Items.Add(i.ToString());
-            }
+                for (int i = 0; i < p / 2; i++)
+                {
+                    listBox1.Items.Add(generador.elVector()[i].ToString());
+                }
+                for (int i = p / 2; i < p; i++)
+                {
+                    listBox4.Items.Add(generador.elVector()[i].ToString());
+                }
+            }else if (p < 50000) { MessageBox.Show("el vector es muy grande para mostrar"); }
+            
             listBox3.Items.Add(string.Format("Tiempo generando el vector: {0}", tiempo.Elapsed.TotalSeconds));
         }
 
@@ -57,6 +66,7 @@ namespace MetodosOrdenamiento
         private void button2_Click(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
+            listBox5.Items.Clear();
             if (radioButton1.Checked) //burbuja
             {
                 dt1 = DateTime.Now;
@@ -76,10 +86,18 @@ namespace MetodosOrdenamiento
             }
             dt2 = DateTime.Now;
             dt3 = dt2 - dt1;
-            foreach (int i in generador.elVector())
+            if (checkBox1.Checked || generador.elVector().Length < 50000)
             {
-                listBox2.Items.Add(i.ToString());
+                for (int i = 0; i < generador.elVector().Length / 2; i++)
+                {
+                    listBox2.Items.Add(generador.elVector()[i].ToString());
+                }
+                for (int i = generador.elVector().Length / 2; i < generador.elVector().Length; i++)
+                {
+                    listBox5.Items.Add(generador.elVector()[i].ToString());
+                }
             }
+            else if (generador.elVector().Length < 50000) { MessageBox.Show("el vector es muy grande para mostrar"); }
             listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds));
         }
     }

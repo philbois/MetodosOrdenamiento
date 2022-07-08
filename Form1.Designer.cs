@@ -44,6 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,25 +57,25 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(10, 201);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(203, 340);
+            this.listBox1.Size = new System.Drawing.Size(153, 260);
             this.listBox1.TabIndex = 0;
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(238, 201);
+            this.listBox2.Location = new System.Drawing.Point(209, 201);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(229, 340);
+            this.listBox2.Size = new System.Drawing.Size(161, 260);
             this.listBox2.TabIndex = 1;
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(508, 201);
+            this.listBox3.Location = new System.Drawing.Point(468, 201);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(303, 340);
+            this.listBox3.Size = new System.Drawing.Size(303, 116);
             this.listBox3.TabIndex = 2;
             // 
             // radioButton1
@@ -162,7 +166,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(183, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 22);
@@ -207,11 +210,54 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Tiempos de proceso";
             // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 16;
+            this.listBox4.Location = new System.Drawing.Point(10, 494);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(153, 276);
+            this.listBox4.TabIndex = 12;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 16;
+            this.listBox5.Location = new System.Drawing.Point(209, 494);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(161, 276);
+            this.listBox5.TabIndex = 13;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(367, 24);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(147, 20);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.Text = "Mostrar/ No mostrar";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(540, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(265, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Los list box no muestran muchos elementos";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 553);
+            this.ClientSize = new System.Drawing.Size(846, 815);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.listBox5);
+            this.Controls.Add(this.listBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -250,6 +296,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 
