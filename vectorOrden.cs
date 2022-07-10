@@ -75,7 +75,7 @@ namespace MetodosOrdenamiento
             //Condicion de parada
             if (desde == hasta)
                 return;
-            //Calculo la mitad del array
+            //Calculo la mitad del vector
             int mitad = (desde + hasta) / 2;
             //Voy a ordenar recursivamente la primera mitad
             //y luego la segunda
