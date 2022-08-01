@@ -31,7 +31,7 @@ namespace MetodosOrdenamiento
             generador.crear(p);
 
             tiempo.Stop();
-            if (checkBox1.Checked && p<60000)
+           /* if (checkBox1.Checked && p<60000)
             {
                 for (int i = 0; i < p / 2; i++)
                 {
@@ -41,7 +41,7 @@ namespace MetodosOrdenamiento
                 {
                     listBox4.Items.Add(generador.elVector()[i].ToString());
                 }
-            }else if (p >= 60000) { MessageBox.Show("el vector es muy grande para mostrar"); }
+            }else if (p >= 60000) { MessageBox.Show("el vector es muy grande para mostrar"); }*/
             
             listBox3.Items.Add(string.Format("Tiempo generando el vector: {0}", tiempo.Elapsed.TotalSeconds));
         }
@@ -84,9 +84,14 @@ namespace MetodosOrdenamiento
                 dt1 = DateTime.Now;
                 generador.MergeSort();
             }
+            else if (radioButton5.Checked)
+            {
+                dt1 = DateTime.Now;
+                generador.quick();
+            }
             dt2 = DateTime.Now;
             dt3 = dt2 - dt1;
-            if (checkBox1.Checked || generador.elVector().Length < 50000)
+           /* if (checkBox1.Checked || generador.elVector().Length < 50000)
             {
                 for (int i = 0; i < generador.elVector().Length / 2; i++)
                 {
@@ -97,8 +102,8 @@ namespace MetodosOrdenamiento
                     listBox5.Items.Add(generador.elVector()[i].ToString());
                 }
             }
-            else if (generador.elVector().Length < 50000) { MessageBox.Show("el vector es muy grande para mostrar"); }
-            listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds));
+            else if (generador.elVector().Length < 50000) { MessageBox.Show("el vector es muy grande para mostrar"); }*/
+            listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds)); 
         }
     }
 }

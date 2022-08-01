@@ -75,7 +75,7 @@
             this.listBox3.ItemHeight = 16;
             this.listBox3.Location = new System.Drawing.Point(468, 201);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(303, 116);
+            this.listBox3.Size = new System.Drawing.Size(303, 340);
             this.listBox3.TabIndex = 2;
             // 
             // radioButton1
