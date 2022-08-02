@@ -16,7 +16,7 @@ namespace MetodosOrdenamiento
 
             for (int i = 0; i < vector.Length; i++)
             {
-                vector[i] = rnd.Next(50000);
+                vector[i] = rnd.Next(500000);
             }
 
         }
@@ -143,20 +143,24 @@ namespace MetodosOrdenamiento
             pivote = vector[central];
             i = primero;
             j = ultimo;
-            do
+            while (i <= j)
             {
                 while (vector[i] < pivote) i++;
-                while (vector[j] > pivote) j--;
-                if (i <= j)
                 {
-                    int temp;
-                    temp = vector[i];
-                    vector[i] = vector[j];
-                    vector[j] = temp;
-                    i++;
-                    j--;
+                    while (vector[j] > pivote) j--;
+                    {
+                        if (i <= j)
+                        {
+                            int temp;
+                            temp = vector[i];
+                            vector[i] = vector[j];
+                            vector[j] = temp;
+                            i++;
+                            j--;
+                        }
+                    }
                 }
-            } while (i <= j);
+            }
 
             if (primero < j)
             {
