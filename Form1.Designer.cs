@@ -48,6 +48,7 @@
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +113,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton6);
             this.groupBox1.Controls.Add(this.radioButton5);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton3);
@@ -137,11 +139,11 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(372, 33);
+            this.radioButton4.Location = new System.Drawing.Point(353, 32);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(110, 20);
+            this.radioButton4.Size = new System.Drawing.Size(112, 20);
             this.radioButton4.TabIndex = 6;
-            this.radioButton4.Text = "quick iterativo";
+            this.radioButton4.Text = "Quick iterativo";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -249,6 +251,17 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Los list box no muestran muchos elementos";
             // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(601, 32);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(100, 20);
+            this.radioButton6.TabIndex = 8;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "todos juntos";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,6 +313,7 @@
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }
 

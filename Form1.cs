@@ -89,18 +89,26 @@ namespace MetodosOrdenamiento
                 generador.MergeSort();
             }
             else if (radioButton4.Checked)
-                {
-                    dt1 = DateTime.Now;
-                    generador.quickiterativo();
-                }
+            {
+                dt1 = DateTime.Now;
+                generador.quickiterativo();
+            }
             else if (radioButton5.Checked)
             {
                 dt1 = DateTime.Now;
                 generador.quick();
             }
+            else if (radioButton6.Checked)
+            {
+                generador.burbuja();
+                generador.quick();
+                generador.quickiterativo();
+                generador.Seleccion();
+                generador.MergeSort();
+            }
             dt2 = DateTime.Now;
             dt3 = dt2 - dt1;
-     if (checkBox1.Checked && generador.elVector().Length < 50000)
+           if (checkBox1.Checked && generador.elVector().Length < 50000)
             {
                 for (int i = 0; i < generador.elVector().Length / 2; i++)
                 {
@@ -112,7 +120,22 @@ namespace MetodosOrdenamiento
                 }
             }
             else if (generador.elVector().Length < 50000) { MessageBox.Show("el vector es muy grande para mostrar"); }
-            listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds)); 
+           /* listBox3.Items.Add(string.Format("Tiempo Ordenando el vector: {0}", dt3.TotalSeconds));
+            listBox3.Items.Add(string.Format("comparaciones {0} intercambios {1}",
+                generador.Comparaciones[0], generador.Intercambios[0]));*/
+            generador.calculotiempo();
+            for(int i = 0; i < 5; i++)
+            {
+                if (i == 0) listBox3.Items.Add("BURBUJA");
+                if (i == 1) listBox3.Items.Add("Seleccion");
+                if (i == 2) listBox3.Items.Add("merge");
+                if (i == 3) listBox3.Items.Add("QUICK ITERATIVO");
+                if (i == 4) listBox3.Items.Add("QUICKSHORT RECURSIVO");
+                listBox3.Items.Add(string.Format("tiempo ordenando "+ generador.Tiempos[i]));
+                listBox3.Items.Add(string.Format("comparaciones "+ generador.Comparaciones[i]));
+
+                listBox3.Items.Add(string.Format("intercambios " + generador.Intercambios[i]));
+            }
         }
     }
 }
