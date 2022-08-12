@@ -139,9 +139,9 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(372, 33);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(62, 20);
+            this.radioButton4.Size = new System.Drawing.Size(110, 20);
             this.radioButton4.TabIndex = 6;
-            this.radioButton4.Text = "Heap";
+            this.radioButton4.Text = "quick iterativo";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -159,9 +159,9 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(121, 33);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 20);
+            this.radioButton2.Size = new System.Drawing.Size(88, 20);
             this.radioButton2.TabIndex = 4;
-            this.radioButton2.Text = "Insertion";
+            this.radioButton2.Text = "Seleccion";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -171,7 +171,7 @@
             this.textBox1.Size = new System.Drawing.Size(143, 22);
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "30000";
-            this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1

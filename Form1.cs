@@ -31,7 +31,7 @@ namespace MetodosOrdenamiento
             generador.crear(p);
 
             tiempo.Stop();
-         if (checkBox1.Checked && p<60000)
+            if (checkBox1.Checked && p < 60000)
             {
                 for (int i = 0; i < p / 2; i++)
                 {
@@ -41,7 +41,8 @@ namespace MetodosOrdenamiento
                 {
                     listBox4.Items.Add(generador.elVector()[i].ToString());
                 }
-            }else if (p >= 60000) { MessageBox.Show("el vector es muy grande para mostrar"); }
+            }
+            else if (p >= 60000) { MessageBox.Show("el vector es muy grande para mostrar"); }
             
             listBox3.Items.Add(string.Format("Tiempo generando el vector: {0}", tiempo.Elapsed.TotalSeconds));
         }
@@ -63,6 +64,11 @@ namespace MetodosOrdenamiento
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
@@ -75,13 +81,18 @@ namespace MetodosOrdenamiento
             else if (radioButton2.Checked) //insercion ((muy parecido a burbuja)
             {
                 dt1 = DateTime.Now;
-                generador.insertion();
+                generador.Seleccion();
             }
             else if (radioButton3.Checked)//merge
             {
                 dt1 = DateTime.Now;
                 generador.MergeSort();
             }
+            else if (radioButton4.Checked)
+                {
+                    dt1 = DateTime.Now;
+                    generador.quickiterativo();
+                }
             else if (radioButton5.Checked)
             {
                 dt1 = DateTime.Now;
@@ -89,7 +100,7 @@ namespace MetodosOrdenamiento
             }
             dt2 = DateTime.Now;
             dt3 = dt2 - dt1;
-           if (checkBox1.Checked && generador.elVector().Length < 50000)
+     if (checkBox1.Checked && generador.elVector().Length < 50000)
             {
                 for (int i = 0; i < generador.elVector().Length / 2; i++)
                 {

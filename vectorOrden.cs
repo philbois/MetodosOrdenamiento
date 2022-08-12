@@ -10,6 +10,59 @@ namespace MetodosOrdenamiento
     {
         Random rnd = new Random();
         int[] vector;
+
+        public int[] Vector { get => vector;  }
+        public static void quickSortiterativo(int[] a)
+        {
+            int[] stk = new int[a.Length];            // stack
+            int sti = 0;                        // stack index
+            stk[sti++] = a.Length - 1;
+            stk[sti++] = 0;
+            while (sti != 0)
+            {
+                int lo = stk[--sti];
+                int hi = stk[--sti];
+                while (lo < hi)
+                {
+                    // Hoare partition
+                    int md = lo + (hi - lo) / 2;
+                    int ll = lo - 1;
+                    int hh = hi + 1;
+                    int p = a[md];
+                    int t;
+                    while (true)
+                    {
+                        while (a[++ll] < p) ;
+                        while (a[--hh] > p) ;
+                        if (ll >= hh)
+                            break;
+                        t = a[ll];
+                        a[ll] = a[hh];
+                        a[hh] = t;
+                    }
+                    ll = hh++;
+                    // ll = last left index, hh = first right index
+                    // push larger partition indexes onto stack
+                    // loop back for smaller partition
+                    if ((ll - lo) > (hi - hh))
+                    {
+                        stk[sti++] = ll;
+                        stk[sti++] = lo;
+                        lo = hh;
+                    }
+                    else
+                    {
+                        stk[sti++] = hi;
+                        stk[sti++] = hh;
+                        hi = ll;
+                    }
+                }
+            }
+        }
+        public void quickiterativo()
+        {
+            quickSortiterativo(vector);
+        }
         public void crear(int indice)
         {
             vector = new int[indice];
@@ -23,52 +76,55 @@ namespace MetodosOrdenamiento
         public int[] elVector() { return vector; }
         public void burbuja()
         {
-            int mayor = 0;
-            bool bandera = false;
+            int aux = 0;
             int contador = 0;
 
             for (int i = 0; i < vector.Length - 1; i++)
             {
                 
-               
-                for (int j = 0; j < vector.Length - i - 1; j++)
+
+                    for (int j = i +1; j < vector.Length; j++)
                 {
 
-                    if (vector[j] > vector[j + 1])
+                    if (vector[i] > vector[j])
                     {
-                        mayor = vector[j];
-                        vector[j] = vector[j + 1];
-                        vector[j + 1] = mayor;
-                       
-                    
+                        aux = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = aux;
                     }
                     contador++;
 
                 }
             }
         }
-        public void insertion()
+        public void Seleccion()
         {
 
+            int minimo = 0;
+            int temp;
             for (int i = 0; i < vector.Length - 1; i++)
             {
-                for (int j = i + 1; j > 0; j--)
+                minimo = i;
+                for (int j = i + 1; j < vector.Length; j++)
                 {
-                    if (vector[j - 1] > vector[j])
+                    if (vector[minimo] > vector[j])
                     {
-                        int temp = vector[j - 1];
-                        vector[j - 1] = vector[j];
-                        vector[j] = temp;
+                        minimo = j;
                     }
                 }
+                temp = vector[minimo];
+                vector[minimo] = vector[i];
+                vector[i] = temp;
             }
         }
-        public  void MergeSort()
+        public void MergeSort()
         {
-            MergeSort( 0, vector.Length - 1);
+            MergeSort(0, vector.Length - 1);
         }
+     
 
-         private void MergeSort( int desde, int hasta)
+
+        private void MergeSort(int desde, int hasta)
         {
             //Condicion de parada
             if (desde == hasta)
@@ -85,7 +141,7 @@ namespace MetodosOrdenamiento
         }
 
         //Método que mezcla las dos mitades ordenadas
-         private int[] Merge(int desde1, int hasta1, int desde2, int hasta2)
+        private int[] Merge(int desde1, int hasta1, int desde2, int hasta2)
         {
             int a = desde1;
             int b = desde2;
@@ -133,7 +189,7 @@ namespace MetodosOrdenamiento
         }
         public void quick()
         {
-            quicksort(vector, 0, vector.Length-1);
+            quicksort(vector, 0, vector.Length - 1);
         }
         private void quicksort(int[] vector, int primero, int ultimo)
         {
@@ -173,3 +229,51 @@ namespace MetodosOrdenamiento
         }
     }
 }
+  
+
+    class Main
+    {
+        public static void swap(int[] arr, int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+        public static int partition(int [] a, int start, int end)
+        {
+            // Elija el elemento más a la derecha como un pivote de la array
+            int pivot = a[end];
+
+            // los elementos menores que el pivote irán a la izquierda de `pIndex`
+            // elementos más que el pivote irán a la derecha de `pIndex`
+            // elementos iguales pueden ir en cualquier dirección
+            int pIndex = start;
+
+            // cada vez que encontramos un elemento menor o igual que el pivote,
+            // `pIndex` se incrementa, y ese elemento se colocaría
+            // antes del pivote.
+            for (int i = start; i < end; i++)
+            {
+                if (a[i] <= pivot)
+                {
+                    swap(a, i, pIndex);
+                    pIndex++;
+                }
+            }
+
+            // intercambiar `pIndex` con pivote
+            swap(a, pIndex, end);
+
+            // devuelve `pIndex` (índice del elemento pivote)
+            return pIndex;
+        }
+
+        // Rutina iterativa Quicksort
+
+
+
+        // Implementación iterativa de Quicksort
+
+    }
+
