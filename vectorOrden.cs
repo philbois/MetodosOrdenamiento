@@ -51,7 +51,7 @@ namespace MetodosOrdenamiento
 
             for (int i = 0; i < vector.Length; i++)
             {
-                vector[i] = rnd.Next();
+                vector[i] = rnd.Next(255);
             }
             for (int i = 0; i < vector.Length; i++)
             {
@@ -65,7 +65,7 @@ namespace MetodosOrdenamiento
             }
 
         }
-        public int[] elVector() { return vector; }
+        public int[] elVector() { return vector1; }
         public void burbuja()
         {
             dt1 = DateTime.Now;
@@ -92,6 +92,37 @@ namespace MetodosOrdenamiento
                 }
             }
             dt2= DateTime.Now;
+        }
+        public void burbuja2()
+        {
+            dt1 = DateTime.Now;
+            int aux = 0;
+            int contador = 0;
+            bool bandera = false;
+            for (int i = 0; i < vector.Length - 1; i++)
+            {
+                if (bandera)
+                {
+                    break;
+                }
+                bandera = true;
+                for (int j = 0; j < vector.Length-i-1; j++)
+                {
+                    comparaciones[0]++;
+
+                    if (vector1[j] > vector1[j+1])
+                    {
+                        intercambios[0]++;
+                        bandera= false;
+                        aux = vector1[j];
+                        vector1[j] = vector1[j+1];
+                        vector1[j+1] = aux;
+                    }
+                    contador++;
+
+                }
+            }
+            dt2 = DateTime.Now;
         }
         public void Seleccion()
         {dt3= DateTime.Now;
